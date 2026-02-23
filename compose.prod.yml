@@ -1,0 +1,16 @@
+services:
+  app-sop-prod:
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    image: app-sop:prod
+    container_name: app-sop-prod
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    env_file:
+      - ../../.env
+networks:
+  default:
+    name: appnet
+    external: true
