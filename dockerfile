@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-# RUN chown -R node:node /app
-# USER node
-CMD ["npm", "run", "dev"]
+RUN npx prisma generate
+RUN npm run build
+
+CMD ["npm", "start"]
