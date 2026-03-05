@@ -18,10 +18,10 @@ const Sidebar = () => {
   const pathActive = usePathname();
 
   const menuItems = [
-    { name: "Dashboard", icon: TextAlignJustify, href: "/dashboard" },
-    { name: "Product Catalog", icon: Layers, href: "/produk" },
-    { name: "Add Product", icon: PackagePlus, href: "/tambah-produk" },
-    { name: "User Control", icon: UserRoundCog, href: "/users" },
+    { name: "Dashboard", icon: TextAlignJustify, href: "/dashboard", exact: true },
+    { name: "Product Catalog", icon: Layers, href: "/produk", exact: false },
+    { name: "Add Product", icon: PackagePlus, href: "/produk/add-product", exact: true },
+    { name: "User Control", icon: UserRoundCog, href: "/users", exact: false },
   ];
 
   return (
@@ -69,7 +69,18 @@ const Sidebar = () => {
           {/* MENU */}
           <div className="flex-1 px-4 space-y-2">
             {menuItems.map((item) => {
-              const isActive = pathActive === item.href;
+              const isActive = (() => {
+                if (item.exact) return pathActive === item.href;
+                if (item.href === "/produk") {
+                  return (
+                    pathActive === "/produk" ||
+                    (pathActive.startsWith("/produk/") &&
+                      !pathActive.startsWith("/produk/add-product"))
+                  );
+                }
+
+                return pathActive.startsWith(item.href);
+              })();
               const Icon = item.icon;
 
               return (
@@ -78,12 +89,11 @@ const Sidebar = () => {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={`
-                flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-gray-700
-                ${
-                  isActive
-                    ? "bg-emerald-600 text-white shadow-lg shadow-emerald-900/20"
-                    : "hover:bg-slate-800 hover:text-slate-100"
-                }
+                flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-500 text-gray-700 ease-out
+                ${isActive
+                      ? "bg-emerald-600 text-white shadow-lg shadow-emerald-900/20"
+                      : "hover:bg-slate-800 hover:text-slate-100"
+                    }
               `}
                 >
                   <Icon size={18} />

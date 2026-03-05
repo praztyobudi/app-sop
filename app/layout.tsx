@@ -1,5 +1,5 @@
-import Navbar from "./componens/navbar";
-import Sidebar from "./componens/sidebar";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import "./globals.css";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {

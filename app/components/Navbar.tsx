@@ -129,13 +129,13 @@ const Navbar = () => {
                   : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                 }`}
             >
-              <button className="w-full text-left px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 transition">
+              {/* <button className="w-full text-left px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 transition">
                 My Profile
               </button>
               <button className="w-full text-left px-4 py-2 text-sm text-slate-200 hover:bg-slate-700 transition">
                 Settings
               </button>
-              <div className="border-t border-slate-700 my-2"></div>
+              <div className="border-t border-slate-700 my-2"></div> */}
               <button className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-500/10 transition font-medium">
                 Logout
               </button>

@@ -1,4 +1,4 @@
-import ProductGrid from "@/app/componens/ProductGrid";
+import ProductGrid from "@/app/dashboard/components/ProductGrid";
 
 export default function ProdukPage() {
   return (
