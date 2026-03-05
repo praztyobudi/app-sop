@@ -1,7 +1,7 @@
 "use client";
 
-import LogPanel from "./components/LogPanel";
-import StatCards from "./components/StatCard";
+import LogPanel from "../components/LogPanel";
+import StatCards from "../components/StatCard";
 
 const Home = () => {
   return (

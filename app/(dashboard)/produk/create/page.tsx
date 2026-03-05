@@ -1,4 +1,4 @@
-import ProductForm from "@/app/dashboard/components/AddProduct"
+import ProductForm from "@/app/(dashboard)/components/AddProduct"
 
 const AddProductPage = () => {
   return (

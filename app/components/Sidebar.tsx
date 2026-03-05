@@ -20,7 +20,7 @@ const Sidebar = () => {
   const menuItems = [
     { name: "Dashboard", icon: TextAlignJustify, href: "/dashboard", exact: true },
     { name: "Product Catalog", icon: Layers, href: "/produk", exact: false },
-    { name: "Add Product", icon: PackagePlus, href: "/produk/add-product", exact: true },
+    { name: "Add Product", icon: PackagePlus, href: "/produk/create", exact: true },
     { name: "User Control", icon: UserRoundCog, href: "/users", exact: false },
   ];
 
